@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        @vite('resources/css/app.css')
+
+        <title>Laravel</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+        <!-- Styles -->
+        <style>
+            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--tw-bg-opacity: 1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-gray-100{--tw-bg-opacity: 1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.border-gray-200{--tw-border-opacity: 1;border-color:rgb(229 231 235 / var(--tw-border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{--tw-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);--tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.text-center{text-align:center}.text-gray-200{--tw-text-opacity: 1;color:rgb(229 231 235 / var(--tw-text-opacity))}.text-gray-300{--tw-text-opacity: 1;color:rgb(209 213 219 / var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity))}.text-gray-600{--tw-text-opacity: 1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-700{--tw-text-opacity: 1;color:rgb(55 65 81 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity: 1;color:rgb(17 24 39 / var(--tw-text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--tw-bg-opacity: 1;background-color:rgb(31 41 55 / var(--tw-bg-opacity))}.dark\:bg-gray-900{--tw-bg-opacity: 1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:border-gray-700{--tw-border-opacity: 1;border-color:rgb(55 65 81 / var(--tw-border-opacity))}.dark\:text-white{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:text-gray-400{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-gray-500{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity))}}
+        </style>
+
+        <style>
+            body {
+                font-family: 'Nunito', sans-serif;
+            }
+
+            /* Untuk transisi dropdown */
+
+            dropdown-content {
+                display: none;
+            }
+            #dropdownToggle:checked + label + .dropdown-content {
+                display: block;
+
+            }
+        </style>
+    </head>
+    <body class="antialiased">
+      
+        <div class="flex w-full h-[100vh] mb-0 overflow-y-hidden bg-white p-10">
+
+            <div class="w-full h-[500px] bg-white">
+                <div class="w-full h-[65px] bg-pink-100 shadow-lg rounded-xl flex items-center justify-start p-5 mb-5"> <!-- CHANGED: Added flex, items-center, and justify-center classes -->
+                    <h1 class="font-extrabold text-pink-600 text-2xl">Daftar Pengajuan</h1> <!-- CHANGED: Removed the incorrect "text-" class -->
+                </div>
+                <div class="w-full h-full rounded rounded-3xl relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    No.
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Nama Layanan 
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Perihal
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    OPD
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Tanggal
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Status
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white hover:bg-gray-50">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                    1
+                                </th>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                    Infrastruktur
+                                </th>
+                                <td class="px-6 py-4">
+                                    Perbaikan Jaringan
+                                </td>
+                                <td class="px-6 py-4">
+                                    Dinas Komunikasi Dan Informatika
+                                </td>
+                                <td class="px-6 py-4">
+                                    15/08/06
+                                </td>
+                                <td class="px-6 py-4">
+                                    Masih Menunggu
+                                </td>
+                                <td class="flex items-center px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 hover:underline">Edit</a>
+                                    <a href="#" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white hover:bg-gray-50">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                    2
+                                </th>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                    Keamanan Informasi
+                                </th>
+                                <td class="px-6 py-4">
+                                    Kemananan jaringan
+                                </td>
+                                <td class="px-6 py-4">
+                                    Dinas Komunikasi Dan Informatika
+                                </td>
+                                <td class="px-6 py-4">
+                                    15/08/06
+                                </td>
+                                <td class="px-6 py-4">
+                                    Masih Menunggu
+                                </td>
+                                <td class="flex items-center px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 hover:underline">Edit</a>
+                                    <a href="#" class="font-medium text-red-600 hover:underline ms-3">Remove</a>
+                                </td>
+                            </tr>
+                            <tr class="bg-white hover:bg-gray-50">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                    3
+                                </th>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                    Layanan Aplikasi
+                                </th>
+                                <td class="px-6 py-4">
+                                    Pembuatan Aplikasi Layanan
+                                </td>
+                                <td class="px-6 py-4">
+                                    Dinas Kebersihan
+                                </td>
+                                <td class="px-6 py-4">
+                                    16/08/06
+                                </td>
+                                <td class="px-6 py-4">
+                                    Masih Menunggu
+                                </td>
+                                <td class="flex items-center px-6 py-4">
+                                    <a href="#" class="font-medium text-blue-600 hover:underline">Edit</a>
+                                    <button data-modal-target="detail-modal" data-modal-toggle="default-modal" class="font-medium text-red-600 hover:underline ms-3 show-modal">Lihat Detail</button>
+
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    
+                </div>
+
+                
+            </div>
+
+            <div id="detail-modal" tabindex="-1" aria-hidden="true" class="modal overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center flex hidden bg-black bg-opacity-50 h-[100%] w-full md:inset-0 h-[calc(100%-1rem)] max-h-full ">
+                <div class="relative p-4 w-full max-w-2xl max-h-full">
+                    <!-- Modal content -->
+                    <div class="modal-content relative flex flex-col justify-between bg-white rounded-lg shadow w-full h-full max-w-[90&]">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                            <h3 class="text-xl font-semibold text-gray-900">
+                                Terms of Service
+                            </h3>
+                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center close-modal">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5 space-y-4 flex flex-col">
+                            <div class="flex-1 h-full-w-32 bg-gray-300">
+
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b">
+                            <button data-modal-hide="default-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center close-modal">Cancel</button>
+                            <button data-modal-hide="default-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Decline</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.querySelector('.modal');
+            const showModal = document.querySelector('.show-modal');
+            const closeModal = document.querySelectorAll('.close-modal');
+
+                // Show modal
+                if (showModal) {
+                    showModal.addEventListener('click', function () {
+                        modal.classList.remove('hidden');
+                    });
+                }
+
+                // Close modal
+                closeModal.forEach(button => {
+                    button.addEventListener('click', function () {
+                        modal.classList.add('hidden');
+                    });
+                 });
+            });
+
+           
+        </script>
+
+        
+    </body>
+</html>
